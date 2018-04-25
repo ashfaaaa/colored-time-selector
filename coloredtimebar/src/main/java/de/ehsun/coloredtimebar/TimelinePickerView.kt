@@ -10,9 +10,14 @@ import android.view.MotionEvent
 
 class TimelinePickerView @JvmOverloads constructor(context: Context,
                                                    attrs: AttributeSet? = null,
-                                                   defStyleAttr: Int = 0,
-                                                   defStyleRes: Int = 0)
-    : TimelineView(context, attrs, defStyleAttr, defStyleRes) {
+                                                   defStyleAttr: Int = 0)
+    : TimelineView(context, attrs, defStyleAttr) {
+
+    constructor(context: Context,
+                attrs: AttributeSet?,
+                defStyleAttr: Int,
+                defStyleRes: Int)
+            : this(context, attrs, defStyleAttr)
 
     var pickerDrawable: Drawable = context.getDrawableCompat(R.drawable.ic_navigation_black_24dp)
     var stepSize: Int = 1
