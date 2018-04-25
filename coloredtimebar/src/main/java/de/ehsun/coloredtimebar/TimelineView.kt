@@ -10,9 +10,13 @@ import java.util.*
 
 open class TimelineView @JvmOverloads constructor(context: Context,
                                                   attrs: AttributeSet? = null,
-                                                  defStyleAttr: Int = 0,
-                                                  defStyleRes: Int = 0)
-    : View(context, attrs, defStyleAttr, defStyleRes) {
+                                                  defStyleAttr: Int = 0)
+    : View(context, attrs, defStyleAttr) {
+
+    constructor(context: Context,
+                attrs: AttributeSet?,
+                defStyleAttr: Int,
+                defStyleRes: Int) : this(context, attrs, defStyleAttr)
 
     var timeRange: ClosedRange<SimpleTime> by invalidateOnChange(SimpleTime(7, 0)..SimpleTime(19, 0))
     var timeTextInterval: Int by invalidateOnChange(1)
